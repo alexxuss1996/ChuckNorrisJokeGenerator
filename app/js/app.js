@@ -5,7 +5,7 @@ function getJokes(e) {
 
 	const number = document.querySelector('input[type="number"]').value;
 
-	if (!!number === false || !!parseFloat(number) === false) {
+	if (!!number === false || !!(parseFloat(number)) === false) {
 		// Create alert div
 		const div = document.createElement("div");
 
