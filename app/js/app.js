@@ -5,13 +5,13 @@ function getJokes(e) {
 
 	const number = document.querySelector('input[type="number"]').value;
 
-	if (number === "") {
+	if (!!number === false || !!(parseFloat(number)) === false) {
 		// Create alert div
 		const div = document.createElement("div");
 
 		div.className = "alert";
 
-		div.appendChild(document.createTextNode("Please add a number!"));
+		div.appendChild(document.createTextNode("Please add a correct value!"));
 
 		const container = document.querySelector(".container");
 		const heading = document.querySelector("h2");
@@ -29,7 +29,7 @@ function getJokes(e) {
 	xhr.open("GET", `http://api.icndb.com/jokes/random/${number}`, true)
 
 	xhr.onprogress = function() {
-		if (this.readyState !== 4) {
+		if (this.readyState === 3) {
 			loading.style.display = "block";
 
 		}
