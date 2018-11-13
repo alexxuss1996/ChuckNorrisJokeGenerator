@@ -5,13 +5,13 @@ function getJokes(e) {
 
 	const number = document.querySelector('input[type="number"]').value;
 
-	if (!!number === false || !!(parseFloat(number)) === false) {
+	if (!!number === false || !!parseFloat(number) === false) {
 		// Create alert div
 		const div = document.createElement("div");
 
 		div.className = "alert";
 
-		div.appendChild(document.createTextNode("Please add a correct value!"));
+		div.appendChild(document.createTextNode("Please enter a correct value!"));
 
 		const container = document.querySelector(".container");
 		const heading = document.querySelector("h2");
